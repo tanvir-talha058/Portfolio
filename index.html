@@ -1,70 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Tanvir Ahmed - Portfolio</title>
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts: Inter is a great modern choice similar to the design -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tanvir Ahmed - Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 
-  <script>
-    tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              // Recreating the color palette from the design
-              'dark-bg': '#111827',      // A deep, dark blue-gray (slate-900)
-              'card-bg': '#1F2937',     // A slightly lighter gray for cards (slate-800)
-              'accent': '#F59E0B',      // A vibrant amber/gold (amber-500)
-              'light-text': '#D1D5DB',  // Off-white for body text (gray-300)
-              'subtle-text': '#6B7280', // Lighter gray for less important text (gray-500)
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-bg': '#111827',
+                        'card-bg': '#1F2937',
+                        'accent': '#F59E0B',
+                        'light-text': '#D1D5DB',
+                        'subtle-text': '#6B7280',
+                    }
+                }
             }
-          }
         }
-      }
-  </script>
+    </script>
 
-  <meta name="description" content="Tanvir Ahmed - Computer Science Student,Tech Enthusiast, Learner, Machine Learning & Deep Learning Enthusiast, Open-Source Contributor , Python Developer ">
-  <meta name="keywords" content="Tanvir Ahmed, Machine Learning, Full Stack Developer, Portfolio, Bangladesh">
-  <link rel="preload" href="profile.jpeg" as="image">
-  <style>
-    /* Global responsive adjustments */
-    @media (max-width: 640px) {
-        .container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        
-        section {
-            scroll-margin-top: 5rem;
-        }
-    }
-
-    /* Smooth header transition */
-    header {
-        transition: transform 0.3s ease-in-out;
-    }
-
-    /* Mobile menu transition */
-    #mobile-menu {
-        transition: opacity 0.3s ease-in-out;
-    }
-</style>
+    <meta name="description" content="Tanvir Ahmed - Computer Science Student,Tech Enthusiast, Learner, Machine Learning & Deep Learning Enthusiast, Open-Source Contributor , Python Developer">
+    <meta name="keywords" content="Tanvir Ahmed, Machine Learning, Full Stack Developer, Portfolio, Bangladesh">
+    <link rel="preload" href="profile.jpeg" as="image">
 </head>
-
 <body class="bg-dark-bg text-light-text font-sans">
 
   <!-- Navbar -->
@@ -346,37 +325,7 @@
         </div>
     </div>
   </footer>
-  <script>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const header = document.querySelector('header');
-
-    // Handle Mobile Menu
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden');
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!header.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-    });
-
-    // Handle scroll behavior
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
-        lastScroll = currentScroll;
-    });
-</script>
-
+  <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>

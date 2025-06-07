@@ -18,23 +18,28 @@
 
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            // Recreating the color palette from the design
-            'dark-bg': '#111827',      // A deep, dark blue-gray (slate-900)
-            'card-bg': '#1F2937',     // A slightly lighter gray for cards (slate-800)
-            'accent': '#F59E0B',      // A vibrant amber/gold (amber-500)
-            'light-text': '#D1D5DB',  // Off-white for body text (gray-300)
-            'subtle-text': '#6B7280', // Lighter gray for less important text (gray-500)
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              // Recreating the color palette from the design
+              'dark-bg': '#111827',      // A deep, dark blue-gray (slate-900)
+              'card-bg': '#1F2937',     // A slightly lighter gray for cards (slate-800)
+              'accent': '#F59E0B',      // A vibrant amber/gold (amber-500)
+              'light-text': '#D1D5DB',  // Off-white for body text (gray-300)
+              'subtle-text': '#6B7280', // Lighter gray for less important text (gray-500)
+            }
           }
         }
       }
-    }
   </script>
+
+  <meta name="description" content="Tanvir Ahmed - CS Graduate, ML & Full-Stack Developer specializing in AI, web development, and mobile applications">
+  <meta name="keywords" content="Tanvir Ahmed, Machine Learning, Full Stack Developer, Portfolio, Bangladesh">
+  <link rel="preload" href="profile.jpeg" as="image">
 </head>
 
 <body class="bg-dark-bg text-light-text font-sans">
@@ -47,7 +52,7 @@
         Tanvir.
       </a>
       <!-- Mobile Menu Button (Hidden on larger screens) -->
-      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Toggle mobile menu">
           <i class="fa-solid fa-bars text-2xl"></i>
       </button>
       <ul class="hidden md:flex items-center space-x-10 text-lg">
@@ -66,7 +71,7 @@
     </nav>
   </header>
 
-  <main class="container mx-auto px-6">
+  <main role="main" class="container mx-auto px-6">
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center">
@@ -85,7 +90,7 @@
         <!-- Right Column: Image & Intro -->
         <div class="flex items-center gap-8">
             <div class="w-[300px] h-[400px] lg:w-[350px] lg:h-[480px] flex-shrink-0">
-                <img src="profile.jpeg" alt="A professional headshot of Tanvir Ahmed" class="w-full h-full object-cover rounded-2xl shadow-2xl">
+                <img src="profile.jpeg" alt="A professional headshot of Tanvir Ahmed" loading="eager" class="w-full h-full object-cover rounded-2xl shadow-2xl">
             </div>
             <div>
               <p class="text-subtle-text uppercase tracking-widest text-sm mb-3">— INTRODUCTION</p>
@@ -191,10 +196,10 @@
             </div>
 
             <!-- Right: Contact Form -->
-            <form action="#" class="space-y-6">
+            <form action="#" class="space-y-6" name="contact" method="POST">
                 <div>
                     <label for="name" class="block text-subtle-text mb-2">What's your name?</label>
-                    <input type="text" id="name" class="w-full bg-card-bg border border-slate-700 rounded-lg p-4 text-white focus:border-accent focus:ring-0 outline-none transition">
+                    <input type="text" id="name" name="name" required minlength="2" class="w-full bg-card-bg border border-slate-700 rounded-lg p-4 text-white focus:border-accent focus:ring-0 outline-none transition">
                 </div>
                  <div>
                     <label for="email" class="block text-subtle-text mb-2">Your fancy email</label>

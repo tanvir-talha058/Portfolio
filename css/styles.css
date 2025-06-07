@@ -29,16 +29,17 @@ header {
 }
 
 .nav-link {
-    @apply hover:text-accent transition-colors duration-300 relative;
+    @apply relative overflow-hidden transition-colors duration-300;
 }
 
-.nav-link::after {
+.nav-link::before {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-accent 
+    transform translate-x-[-100%] transition-transform duration-300;
 }
 
-.nav-link:hover::after {
-    @apply w-full;
+.nav-link:hover::before {
+    transform: translate-x(0);
 }
 
 /* Mobile Menu */
@@ -59,20 +60,31 @@ header {
 }
 
 .skill-card {
-    @apply bg-card-bg p-6 rounded-2xl group hover:border-accent border border-transparent 
-    transition-all duration-300 hover:shadow-lg hover:shadow-accent/10;
+    @apply bg-card-bg p-6 rounded-2xl group border border-transparent 
+    transition-all duration-500 hover:shadow-lg hover:shadow-accent/20;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.skill-card:hover {
+    @apply border-accent;
+    transform: translateY(-5px) rotateX(5deg);
 }
 
 /* Project Cards */
 .project-card {
-    @apply block bg-card-bg p-6 rounded-2xl group overflow-hidden;
-    &:hover .project-image {
-        @apply scale-110;
-    }
+    @apply block bg-card-bg p-6 rounded-2xl group overflow-hidden relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-image {
-    @apply w-full h-full object-cover transition-transform duration-500;
+.project-card:hover {
+    @apply shadow-xl shadow-accent/20;
+    transform: translateY(-10px);
+}
+
+.project-card:hover .project-image {
+    @apply scale-110;
+    filter: brightness(1.1) contrast(1.1);
 }
 
 /* Form Elements */
@@ -82,10 +94,31 @@ header {
     hover:border-accent/50;
 }
 
+.form-input {
+    @apply transition-all duration-300;
+}
+
+.form-input:hover {
+    @apply border-accent/50;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.1);
+}
+
+.form-input:focus {
+    @apply border-accent;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+    transform: translateY(-2px);
+}
+
 /* Social Links */
 .social-link {
-    @apply text-subtle-text hover:text-accent transition-colors duration-300 
-    hover:scale-110 transform;
+    @apply text-subtle-text transition-all duration-300 
+    hover:text-accent relative;
+    transform-origin: center;
+}
+
+.social-link:hover {
+    animation: bounce 0.5s ease infinite;
+    text-shadow: 0 0 15px currentColor;
 }
 
 /* Scrollbar Styling */
@@ -131,4 +164,37 @@ header {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+/* Button Hover Effect */
+.btn-primary {
+    @apply relative overflow-hidden transition-all duration-300;
+}
+
+.btn-primary::after {
+    content: '';
+    @apply absolute inset-0 bg-accent/20 
+    transform scale-x-0 origin-left transition-transform duration-300;
+}
+
+.btn-primary:hover::after {
+    @apply scale-x-100;
 }

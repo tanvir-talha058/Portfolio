@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanvir Ahmed - Portfolio</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter is a great modern choice similar to the design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            // Recreating the color palette from the design
+            'dark-bg': '#111827',      // A deep, dark blue-gray (slate-900)
+            'card-bg': '#1F2937',     // A slightly lighter gray for cards (slate-800)
+            'accent': '#F59E0B',      // A vibrant amber/gold (amber-500)
+            'light-text': '#D1D5DB',  // Off-white for body text (gray-300)
+            'subtle-text': '#6B7280', // Lighter gray for less important text (gray-500)
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-dark-bg text-light-text font-sans">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold flex items-center gap-2">
+        <span class="bg-accent text-dark-bg w-8 h-8 flex items-center justify-center rounded-full font-bold">T</span>
+        Tanvir.
+      </a>
+      <!-- Mobile Menu Button (Hidden on larger screens) -->
+      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+          <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
+      <ul class="hidden md:flex items-center space-x-10 text-lg">
+        <li><a href="#about" class="hover:text-accent transition-colors duration-300">About</a></li>
+        <li><a href="#projects" class="hover:text-accent transition-colors duration-300">Works</a></li>
+        <li><a href="#contact" class="hover:text-accent transition-colors duration-300">Contact</a></li>
+      </ul>
+       <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-dark-bg py-4 px-6">
+          <ul class="flex flex-col items-center space-y-4 text-lg">
+              <li><a href="#about" class="hover:text-accent transition-colors duration-300">About</a></li>
+              <li><a href="#projects" class="hover:text-accent transition-colors duration-300">Works</a></li>
+              <li><a href="#contact" class="hover:text-accent transition-colors duration-300">Contact</a></li>
+          </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto px-6">
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <!-- Left Column: Text & Socials -->
+        <div class="text-center md:text-left">
+          <h1 class="text-5xl lg:text-7xl font-extrabold text-white">Tanvir Ahmed.</h1>
+          <div class="w-24 h-1.5 bg-accent mt-4 mb-6 mx-auto md:mx-0"></div>
+          <div class="flex justify-center md:justify-start space-x-6 mt-6">
+            <a href="https://github.com/tanvir-talha058" target="_blank" class="text-subtle-text hover:text-white transition-colors text-2xl"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank" class="text-subtle-text hover:text-white transition-colors text-2xl"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" class="text-subtle-text hover:text-white transition-colors text-2xl"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Right Column: Image & Intro -->
+        <div class="flex items-center gap-8">
+            <div class="w-[300px] h-[400px] lg:w-[350px] lg:h-[480px] flex-shrink-0">
+                <img src="profile.jpeg" alt="A professional headshot of Tanvir Ahmed" class="w-full h-full object-cover rounded-2xl shadow-2xl">
+            </div>
+            <div>
+              <p class="text-subtle-text uppercase tracking-widest text-sm mb-3">— INTRODUCTION</p>
+              <h2 class="text-3xl font-bold text-white mb-4">CS Graduate, ML & Full-Stack Developer</h2>
+              <p class="text-light-text mb-6">Based in Khulna, Bangladesh. I build intelligent systems and develop seamless applications to solve real-world problems.</p>
+              <a href="#contact" class="font-bold text-accent hover:underline">Get In Touch →</a>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Services Section -->
+    <section id="about" class="py-24">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- Left Column: My Mission -->
+          <div>
+            <p class="text-subtle-text uppercase tracking-widest text-sm mb-3">— MY MISSION</p>
+            <h3 class="text-4xl font-bold text-white mb-6">I aim to solve meaningful real-world problems.</h3>
+            <p class="text-light-text mb-8">I believe technology's true power lies in its ability to create tangible, positive impact. My passion is to combine machine learning with robust development to build solutions that are not only innovative but also genuinely useful and accessible.</p>
+            <div class="flex gap-8">
+                <div>
+                    <p class="text-5xl font-bold text-accent">3+</p>
+                    <p class="text-subtle-text">Published Works</p>
+                </div>
+                <div>
+                    <p class="text-5xl font-bold text-accent">10+</p>
+                    <p class="text-subtle-text">Completed Projects</p>
+                </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Service Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-accent text-dark-bg p-8 rounded-2xl">
+                <i class="fa-solid fa-brain text-4xl mb-4"></i>
+                <h4 class="text-2xl font-bold mb-1">Machine Learning</h4>
+                <p class="font-medium">Deep Learning, Data Science, CV</p>
+            </div>
+            <div class="bg-card-bg p-8 rounded-2xl">
+                <i class="fa-solid fa-code text-4xl mb-4 text-accent"></i>
+                <h4 class="text-2xl font-bold text-white mb-1">Full-Stack Dev</h4>
+                <p class="text-light-text">Django, Python, Shell</p>
+            </div>
+             <div class="bg-card-bg p-8 rounded-2xl">
+                <i class="fa-solid fa-mobile-screen-button text-4xl mb-4 text-accent"></i>
+                <h4 class="text-2xl font-bold text-white mb-1">Mobile Dev</h4>
+                <p class="text-light-text">Flutter, Dart, Firebase</p>
+            </div>
+             <div class="bg-card-bg p-8 rounded-2xl">
+                <i class="fa-solid fa-gamepad text-4xl mb-4 text-accent"></i>
+                <h4 class="text-2xl font-bold text-white mb-1">Game Dev</h4>
+                <p class="text-light-text">Pygame, AI Agents</p>
+            </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <p class="text-subtle-text uppercase tracking-widest text-sm mb-3 text-center">— PORTFOLIO</p>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white text-center mb-12">All Creative Works. <br> Selected projects.</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <a href="#" class="block bg-card-bg p-6 rounded-2xl group">
+                <div class="overflow-hidden rounded-xl">
+                    <img src="https://via.placeholder.com/800x600/F59E0B/111827?text=AgroKart+BD" alt="AgroKart BD" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">AgroKart BD</h3>
+                        <p class="text-subtle-text">Mobile, E-commerce</p>
+                    </div>
+                    <div class="bg-dark-bg w-12 h-12 rounded-full flex items-center justify-center text-accent text-2xl transform group-hover:bg-accent group-hover:text-dark-bg transition-all">→</div>
+                </div>
+            </a>
+            <!-- Project 2 -->
+             <a href="#" class="block bg-card-bg p-6 rounded-2xl group">
+                <div class="overflow-hidden rounded-xl">
+                    <img src="https://via.placeholder.com/800x600/1F2937/F59E0B?text=Task+Manager" alt="Cross-platform Task Manager" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Cross-platform Task Manager</h3>
+                        <p class="text-subtle-text">Python, CLI/GUI</p>
+                    </div>
+                    <div class="bg-dark-bg w-12 h-12 rounded-full flex items-center justify-center text-accent text-2xl transform group-hover:bg-accent group-hover:text-dark-bg transition-all">→</div>
+                </div>
+            </a>
+             <!-- You can add more projects here... -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <!-- Left: Let's Talk -->
+            <div>
+                <p class="text-subtle-text uppercase tracking-widest text-sm mb-3">— CONTACT</p>
+                <h2 class="text-4xl lg:text-5xl font-bold text-white">Got a project? <br> Let's talk.</h2>
+                <p class="text-light-text mt-6 mb-8">I'm open to new opportunities and collaborations. Feel free to reach out via email or connect with me on my social platforms.</p>
+                <a href="mailto:tanvir@example.com" class="text-2xl font-bold text-accent hover:underline">tanvir@example.com →</a>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <form action="#" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-subtle-text mb-2">What's your name?</label>
+                    <input type="text" id="name" class="w-full bg-card-bg border border-slate-700 rounded-lg p-4 text-white focus:border-accent focus:ring-0 outline-none transition">
+                </div>
+                 <div>
+                    <label for="email" class="block text-subtle-text mb-2">Your fancy email</label>
+                    <input type="email" id="email" class="w-full bg-card-bg border border-slate-700 rounded-lg p-4 text-white focus:border-accent focus:ring-0 outline-none transition">
+                </div>
+                 <div>
+                    <label for="message" class="block text-subtle-text mb-2">Tell me about your project</label>
+                    <textarea id="message" rows="4" class="w-full bg-card-bg border border-slate-700 rounded-lg p-4 text-white focus:border-accent focus:ring-0 outline-none transition"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-accent text-dark-bg font-bold text-lg p-4 rounded-lg hover:bg-amber-600 transition-colors">
+                    Submit Now
+                </button>
+            </form>
+         </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-20">
+    <div class="container mx-auto px-6 py-12 text-center text-subtle-text">
+        <div class="text-3xl font-extrabold text-white mb-4">
+            Thanks for scrolling, <span class="text-accent">that's all folks!</span>
+        </div>
+        <p>© 2025 Tanvir Ahmed. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 mt-6">
+            <a href="https://github.com/tanvir-talha058" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </div>
+  </footer>
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>
